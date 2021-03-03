@@ -1,0 +1,73 @@
+/* Remove all margins and paddings */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+  background:
+  url(https://images.pexels.com/photos/2113566/pexels-photo-2113566.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940)
+   ;
+}
+
+table {
+  height: 100%;
+  width: 100%;
+  /* transform: translateX(101%); */
+  /* animation: animate 5s linear; */
+  /* background: #fff; */
+}
+
+td {
+  border-radius: 50%;
+  widows: 6.25%;
+  height: 11.11%;
+  /* width: 12.5%; */
+  /* height: 22.22%; */
+  background: #120E43;
+  transform: scale(2);
+  opacity: 1;
+  /* border: 1px solid #fff; */
+  box-shadow: 0 0 10px #120E43,
+              0 0 20px #120E43,
+              0 0 40px #120E43,
+              0 0 80px #120E43,
+              0 0 120px #120E43;
+  /* background: #000; */
+  /* transition: .1s; */
+  /* transition-delay: 1s; */
+  animation: animate1 .05s linear;
+  animation-delay: calc(0.05s * var(--i));
+  animation-fill-mode: forwards;
+}
+
+/* td:hover {
+  background: transparent;
+  transition-delay: 0s;
+  opacity: 1;
+} */
+
+ @keyframes  animate1 {
+  0%  {
+    transform: scale(2);
+    /* opacity: 1; */
+  }
+  100%  {
+    transform: scale(0);
+    /* opacity: 0; */
+  }
+}
+/*
+@keyframes animate {
+  0% {
+    transform: translateX(0%);
+  }
+
+  100% {
+    transform: translateX(200%);
+  }
+} */

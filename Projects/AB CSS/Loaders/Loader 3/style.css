@@ -1,0 +1,70 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+/* Remove all margins and paddings */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Center the loader */
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: #000;
+}
+
+/* Loader CSS Start */
+
+.loader {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+}
+
+.loader span {
+  content: '';
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  background: #fff;
+  box-shadow:  0px 0px 10px #fff,
+               0px 0px 20px #fff,
+               0px 0px 40px #fff,
+               0px 0px 80px #fff;
+  border-radius: 50%;
+  left: 11px;
+  top: 11px;
+  transform-origin: 89px 89px;
+  transform: rotate(calc(36deg * var(--i)));
+  animation: spin 2s linear infinite;
+  animation-delay: calc(.2s * var(--i));
+}
+
+/* Loading Text */
+h1 {
+  position: absolute;
+  bottom: -120px;
+  left: 50%;
+  transform: translateX(-50%);
+  letter-spacing: 5px;
+  text-shadow: 0 0 5px #fff,
+               0 0 10px #fff;
+  color: rgba(255,255,255,1);
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Animations */
+
+@keyframes spin {
+  0% , 100%{
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+}

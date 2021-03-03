@@ -1,0 +1,391 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap');
+
+:root {
+  --primary-color: #151048;
+  --primary-light-color: #0C98E2;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Lato', sans-serif;
+  color: #333;
+  line-height: 1.6;
+  overflow: hidden;
+
+}
+
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  overflow: auto;
+  padding: 0 10px;
+  /* background: red; */
+}
+
+.flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  /* background: red; */
+}
+
+h1, h2 {
+  font-weight: 600;
+  line-height: 1.2;
+  margin: 10px 0;
+}
+
+/* navbar */
+.navbar {
+  background-color: var(--primary-color);
+  color: #fff;
+  height: 70px;
+}
+
+.navbar .logo {
+  cursor: pointer;
+}
+
+.navbar ul {
+  display: flex;
+  list-style-type: none;
+  /* background: red; */
+
+}
+
+.navbar a {
+  text-decoration: none;
+  color: #FFF;
+  padding: 10px;
+  margin: 0 5px;
+  transition: 0.2s;
+  font-size: 1.2rem;
+}
+
+.navbar a:hover {
+  border-bottom: 2px solid #fff;
+}
+
+.navbar .flex {
+  justify-content: space-between;
+  /* background: red; */
+}
+
+/* Main */
+.main::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  transform: translateX(-64%) translatey(-10%);
+  height: 2500px;
+  width: 2500px;
+  border-radius: 50%;
+  background: var(--primary-light-color);
+  z-index: -1;
+  transition: 0.5s;
+}
+
+.main {
+  margin-top: 3rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  height: 100%;
+}
+/* Forms */
+.main .forms {
+  padding: 20px 50px;
+  flex-direction: column;
+}
+
+.main form h1 {
+  font-size: 3rem;
+  margin-bottom: 50px;
+}
+
+.main .input-field input {
+  width: 90%;
+  border: none;
+  font-size: 1.4rem;
+  border-bottom: 2px solid var(--primary-color);
+  margin-top: 40px;
+  outline: none;
+  transition: 0.5s;
+}
+
+/* .main .input-field input::placeholder {
+  text-align: center;
+  transition: 0.3s;
+}
+
+.main .input-field input:focus::placeholder {
+  text-align: left;
+} */
+
+.main .input-field input:focus {
+  width: 100%;
+  border-bottom: 2px solid var(--primary-light-color);
+}
+
+.main .forgot {
+  color: var(--primary-color);
+  margin-top: 20px;
+  margin-bottom: 20px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.main .new-user {
+  margin-top: 20px;
+  font-weight: 600;
+  color: var(--primary-color);
+  font-size: 1.1rem;
+}
+
+.main .new-user span {
+  color: #FFF;
+  padding: 5px 10px;
+  background-color: var(--primary-color);
+  font-weight: 1000;
+  cursor: pointer;
+  transition: 0.2s;
+  border-radius: 1rem;
+  font-size: 1.1rem;
+  margin-left: 5px;
+}
+
+.main .signup-form .btn {
+  margin-top: 10px;
+}
+
+.main .signup-form .check-field {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.main .signup-form .check-field .checkbox {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+}
+
+.main .signup-form .check-field .accept {
+  color: var(--primary-color);
+  margin: 20px 10px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.signup-form {
+  opacity: 0;
+  transform: translateY(300%);
+  transition: 1.5s;
+}
+
+.signup-text {
+  transform: translateX(-300%);
+  transition: 1s;
+}
+
+.main .signin-form {
+  transition: 1s;
+  transform: translateY(0);
+}
+
+/* Text */
+
+.main .form-text {
+  padding-left: 4rem;
+  flex-direction: column;
+}
+
+.main .signin-text{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 5rem;
+  margin-bottom: 5rem;
+  transform: translateX(0);
+  transition: transform 1s;
+}
+
+.main .form-text h1{
+  font-size: 8rem;
+  font-weight: 700;
+  color: #fff;
+  transition: all 5s;
+}
+
+/* SignUp Mode */
+
+.signup-mode-text::before {
+  position: absolute;
+  transform: translateX(20%);
+}
+
+.main.signup-mode-text .form-text {
+  flex-direction: column-reverse;
+}
+
+.main.signup-mode-text .signup-text{
+  transform: translateX(0);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-left: 3rem;
+}
+
+.main.signup-mode-text .signup-text h1 {
+  color: var(--primary-color);
+}
+.main.signup-mode-text .signin-text{
+  opacity: 0;
+  transform: translateX(-300%);
+}
+
+.main.signup-mode-form .forms {
+  flex-direction: column-reverse;
+}
+
+.main.signup-mode-form .signup-form {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.main.signup-mode-form .signin-form {
+  opacity: 0;
+  transform: translateY(300%);
+}
+/* Utilities */
+.main .btn {
+  padding: 10px 20px;
+  font-size: 1.2rem;
+  outline: none;
+  border-radius: 10px;
+  background-color: var(--primary-light-color);
+  color: #fff;
+  width: 100%;
+  border: 2px solid var(--primary-color);
+  cursor: pointer;
+}
+
+.main .btn:hover {
+  background-color: var(--primary-color);
+}
+
+.main .btn:active {
+  background-color: var(--primary-light-color);
+}
+
+.card {
+  text-align: center;
+  padding: 20px 50px;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+  border-radius: 10px;
+  margin: 10px;
+  background-color: #FFF;
+  color: #333;
+  transition: 1s;
+}
+
+.text-primary {
+  color: var(--primary-light-color);
+}
+
+.bb {
+  border-bottom: 2px solid #fff;
+}
+
+@media(max-width: 768px){
+
+
+  .main::before {
+    content: '';
+    width: 0;
+    height: 0;
+  }
+  .main {
+    grid-template-columns: 1fr;
+  }
+
+  .circle {
+    opacity: 0;
+  }
+}
+
+/* Mobile */
+@media(max-width: 900px){
+  body {
+  	overflow-y: visible;
+  }
+  .navbar {
+    height: 110px;
+  }
+
+  .navbar .flex {
+    flex-direction: column;
+  }
+
+  .navbar ul {
+    padding: 10px;
+    background-color: rgba(255,255,255,0.1);
+    border-radius: 45px;
+    margin-bottom: 10px;
+  }
+
+  .navbar a {
+    font-size: 1rem;
+  }
+
+  .main::before {
+    content: '';
+    width: 0;
+    height: 0;
+  }
+  .main {
+    grid-template-columns: 1fr;
+  }
+
+  .main .form-text h1 {
+  	color: var(--primary-color);
+  }
+
+  .circle {
+    opacity: 0;
+  }
+}
+
+
+/* Some fancy stuff */
+.circle {
+  position: absolute;
+  top: 60px;
+  right: 50px;
+  width: 200px;
+  height: 200px;
+  background: var(--primary-light-color);
+  filter: blur(10px);
+  border-radius: 50%;
+  animation: animate 5s linear infinite;
+  z-index: -1;
+}
+
+@keyframes animate {
+  0%, 100% {
+    transform: scale(0.9);
+  }
+  50% {
+    transform: scale(1);
+  }
+}

@@ -1,0 +1,111 @@
+:root {
+  --color: #2827CC;
+}
+
+/*Remove all margins and paddings*/
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/*Center the loader*/
+
+body {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #000;
+}
+
+/*Loader CSS*/
+
+.loader {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 300px;
+  height: 100px;
+  /* background: #c1c1c1; */
+  /* border: 1px solid green; */
+}
+
+.loader span {
+  position: absolute;
+  height: 10px;
+  width: 100%;
+  background: var(--color);
+  transform-origin: left;
+  box-shadow: 0 0 10px var(--color),
+              0 0 20px var(--color),
+              0 0 40px var(--color);
+  animation: animate 2s linear infinite;
+
+}
+
+.loader span:nth-child(1) {
+  top: 10px;
+}
+
+.loader span:nth-child(2) {
+  top: 30px;
+  transform-origin: right;
+}
+
+.loader span:nth-child(3) {
+  top: 50px;
+
+}
+
+.loader span:nth-child(4) {
+  top: 70px;
+  transform-origin: right;
+}
+
+.loader span:nth-child(5) {
+  top: 90px;
+}
+
+/*Loading Text*/
+
+h2 {
+  text-align: center;
+  color: var(--color);
+  font-family: 'Poppins', sans-serif;
+  letter-spacing: 5px;
+  animation: opac 2s linear 2s infinite;
+  font-size: 2.3rem;
+}
+
+/*Animations*/
+
+@keyframes animate {
+  0%, 100% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(0);
+  }
+
+  70% {
+    transform: scale(0);
+  }
+
+}
+
+@keyframes opac {
+  0%{
+    opacity: 0;
+  	 filter: hue-rotate(0deg);
+  }
+
+  100% {
+    opacity: 1;
+    filter: hue-rotate(360deg);
+    
+  }
+}

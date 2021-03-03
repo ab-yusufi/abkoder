@@ -1,0 +1,227 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
+:root {
+  --background-color: #091921;
+  --center-color: #3c3c3c;
+  --hour-color: #ff105e;
+  --min-color: #fff;
+  --sec-color: #fff;
+  --dropdown-color: #0563af;
+
+  /* Light */
+  --light-background: #fefefe;
+  --min-light: #000;
+  --sec-light: #000;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: var(--background-color);
+  overflow-x: hidden;
+  font-family: 'Poppins', sans-serif;
+
+}
+
+.clock {
+  width: 350px;
+  height: 350px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: url(../images/clock_en_light.png);
+  background-size: cover;
+  background-origin: padding-box;
+  border: 4px solid var(--background-color);
+  border-radius: 50%;
+  box-shadow: 0 -15px 15px rgba(255,255,255,0.05),
+              inset 0 -15px 15px rgba(255,255,255,0.05),
+              0 15px 15px rgba(0,0,0,0.3),
+              inset 0 15px 15px rgba(0,0,0,0.3);
+  transition: .5s;
+}
+
+.clock::before {
+  content: '';
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  background: var(--center-color);
+  border-radius: 50%;
+  z-index: 10000;
+}
+
+.clock .hour,
+.clock .min,
+.clock .sec {
+  position: absolute;
+}
+
+.clock .hour, .hr {
+  width: 160px;
+  height: 160px;
+}
+
+.clock .min, .mn {
+  width: 190px;
+  height: 190px;
+}
+
+.clock .sec, .sc {
+  width: 230px;
+  height: 230px;
+}
+
+.hr, .mn, .sc {
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  transform: rotateZ(10deg);
+}
+
+.hr::before {
+  content: '';
+  position: absolute;
+  width: 8px;
+  height: 80px;
+  background: linear-gradient(to top, #008aff, #00ffe7);
+  z-index: 10;
+  border-radius: 6px;
+  animation: glow 5s linear infinite;
+}
+
+
+.mn::before {
+  content: '';
+  position: absolute;
+  width: 6px;
+  height: 100px;
+  background: linear-gradient(to top, #008aff, #00ffe7);
+  z-index: 11;
+  border-radius: 6px;
+  animation: minAnimation 5s infinite;
+}
+
+.sc::before {
+  content: '';
+  position: absolute;
+  width: 2px;
+  height: 150px;
+  background: var(--sec-color);
+  z-index: 12;
+  border-radius: 6px;
+}
+
+/* Digital */
+.digital  {
+  display: none;
+  color: var(--light-background);
+}
+
+.digital h1{
+  font-size: 12rem;
+  text-shadow: 0 0 50px var(--dropdown-color),
+               0 0 50px var(--dropdown-color);
+  animation: dHAnimation 10s linear infinite;
+}
+
+.digital p{
+  font-size: 2rem;
+  text-shadow: 0 0 10px var(--dropdown-color),
+                0 0 10px var(--dropdown-color);
+}
+
+/* Change Language */
+
+.boxes {
+  width: 80%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.box {
+  margin-top: 100px;
+}
+
+.box select {
+  background: var(--dropdown-color);
+  color: #fff;
+  padding: 10px;
+  width: 150px;
+  height: 50px;
+  border: none;
+  border-radius: 20px;
+  font-size: 20px;
+  box-shadow: 0 5px 25px rgba(0,0,0,0.5);
+  outline: none;
+  /* -webkit-appearance: none;
+  -moz-appearance: none;
+  text-indent: 1px;
+  text-overflow: ''; */
+  transition: 0.5s;
+}
+
+.box select:focus {
+  border-radius: 0;
+}
+
+.box select option {
+  outline: none;
+}
+
+#formatDiv {
+  display: none;
+}
+
+/* Animations */
+@keyframes minAnimation{
+  0%, 100%{
+    filter: hue-rotate(360deg);
+  }
+  50%{
+    filter: hue-rotate(0deg);
+  }
+}
+
+@keyframes dHAnimation {
+  0%, 100%{
+    text-shadow: 0 0 50px var(--dropdown-color),
+                 0 0 50px var(--dropdown-color);
+  }
+
+  25%{
+    text-shadow: 0 0 50px #E21717,
+                 0 0 50px #E21717;
+  }
+
+  50%{
+    text-shadow: 0 0 30px #6EC72D,
+                 0 0 30px #6EC72D;
+  }
+
+  75%{
+    text-shadow: 0 0 30px #C7C11A,
+                 0 0 30px #C7C11A;
+  }
+}
+
+
+@keyframes glow {
+  0%, 100% {
+    filter: hue-rotate(0deg);
+  }
+
+  50% {
+    filter: hue-rotate(360deg);
+  }
+}

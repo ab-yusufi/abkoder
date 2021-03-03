@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>My Login UI 1</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Navbar -->
+  <div class="navbar">
+    <div class="container flex">
+      <h1 class="logo">BrandName</h1>
+      <nav>
+        <ul>
+          <li>
+            <a href="#" class="" id="homeLink">Home</a>
+          </li>
+          <li>
+            <a href="#" class="" id="signupLink" onclick="joinHereFunc()">Sign Up</a>
+          </li>
+          <li>
+            <a href="#" class="" id="signinLink" onclick="signinHereFunc()">Sign In</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+
+  <!-- Main -->
+  <section class="main">
+    <div class="form-text flex">
+      <div class="signin-text">
+        <h1>Welcome</h1>
+        <h1>Back</h1>
+      </div>
+      <div class="signup-text">
+        <h1>JoinUs</h1>
+        <h1>NOW</h1>
+      </div>
+    </div>
+
+    <div class="forms flex">
+      <div class="signin-form card">
+        <form>
+          <h1>Sign In Here</h1>
+          <div class="input-field">
+            <input type="email" placeholder="Email">
+          </div>
+          <div class="input-field">
+            <input type="password" placeholder="Password">
+          </div>
+          <p class="forgot">Forgot Password?</p>
+          <input type="submit" value="Login" class="btn btn-primary-dark">
+          <p class="new-user">New User? <span id="joinHere" onclick="joinHereFunc()">Join Here</span></p>
+        </form>
+      </div>
+      <div class="signup-form card">
+        <form>
+          <h1>Sign Up Here</h1>
+          <div class="input-field">
+            <input type="text" placeholder="Username">
+          </div>
+          <div class="input-field">
+            <input type="email" placeholder="Email">
+          </div>
+          <div class="input-field">
+            <input type="password" placeholder="Password">
+          </div>
+          <div class="check-field">
+            <input type="checkbox" class="checkbox">
+            <p class="accept">I Accept the <span class="text-primary">Terms of Use</span> &amp; <span class="text-primary">Privacy Policy</span></p>
+          </div>
+
+          <input type="submit" value="Signup" class="btn btn-primary-dark">
+          <p class="new-user">Already Have an Account? <span id="signinHere" onclick="signinHereFunc()">Signin Here</span></p>
+        </form>
+      </div>
+    </div>
+  </section>
+  <script src="script.js"></script>
+</body>
+</html>

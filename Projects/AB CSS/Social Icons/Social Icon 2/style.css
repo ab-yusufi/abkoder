@@ -1,0 +1,157 @@
+:root {
+  --whatsapp-color: #25d366;
+  --whatsapp-dark-color: #075e54;
+  --facebook-color: #3b5998;
+  --linkedin-color: #0e76a8;
+  --twitter-color: #00acee;
+  /* --instagram-color: linear-gradient(to right, #833ab4, #fd1d1d, #fcb045); */
+  --instagram-color: #fd1d1d;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #000;
+}
+
+.icon {
+  margin: 0 20px;
+}
+
+.icon span {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100px;
+  height: 100px;
+  color: #fff;
+  border: 1px solid var(--facebook-color);
+  font-size: 3rem;
+  cursor: pointer;
+  transition: .7s;
+}
+
+.icon span::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  width: 100px;
+  height: 100px;
+  transform-origin: bottom;
+  transform: scaleY(0.1);
+  transition: .7s;
+  background: var(--facebook-color);
+  z-index: -1;
+}
+
+.icon span::after {
+  content: '';
+  transition: .7s;
+  position: absolute;
+  top: 0;
+  width: 100px;
+  height: 100px;
+  transform-origin: top;
+  transform: scaleY(0.1);
+  background: var(--facebook-color);
+  z-index: -1;
+}
+
+.icon span:hover {
+  background: var(--facebook-color);
+  box-shadow: 0 0 10px var(--facebook-color),
+              0 0 20px var(--facebook-color),
+              0 0 40px var(--facebook-color),
+              0 0 80px var(--facebook-color),
+              0 0 120px var(--facebook-color),
+              0 0 240px var(--facebook-color);
+}
+
+.icon span.whatsapp {
+  border: 1px solid var(--whatsapp-color);
+}
+.icon span.whatsapp::before,
+.icon span.whatsapp::after {
+  background: var(--whatsapp-color);
+}
+
+.icon span.whatsapp:hover {
+  background: var(--whatsapp-color);
+  box-shadow: 0 0 10px var(--whatsapp-color),
+              0 0 20px var(--whatsapp-color),
+              0 0 40px var(--whatsapp-color),
+              0 0 80px var(--whatsapp-color),
+              0 0 120px var(--whatsapp-color),
+              0 0 240px var(--whatsapp-color);
+}
+
+.icon span.linkedin {
+  border: 1px solid var(--linkedin-color);
+}
+.icon span.linkedin::before,
+.icon span.linkedin::after {
+  background: var(--linkedin-color);
+}
+
+.icon span.linkedin:hover {
+  background: var(--linkedin-color);
+  box-shadow: 0 0 10px var(--linkedin-color),
+              0 0 20px var(--linkedin-color),
+              0 0 40px var(--linkedin-color),
+              0 0 80px var(--linkedin-color),
+              0 0 120px var(--linkedin-color),
+              0 0 240px var(--linkedin-color);
+}
+
+.icon span.twitter {
+  border: 1px solid var(--twitter-color);
+}
+.icon span.twitter::before,
+.icon span.twitter::after {
+  background: var(--twitter-color);
+}
+
+.icon span.twitter:hover {
+  background: var(--twitter-color);
+  box-shadow: 0 0 10px var(--twitter-color),
+              0 0 20px var(--twitter-color),
+              0 0 40px var(--twitter-color),
+              0 0 80px var(--twitter-color),
+              0 0 120px var(--twitter-color),
+              0 0 240px var(--twitter-color);
+}
+
+.icon span.instagram {
+  border: 1px solid var(--instagram-color);
+}
+.icon span.instagram::before,
+.icon span.instagram::after {
+  background: var(--instagram-color);
+}
+
+.icon span.instagram:hover {
+  background: var(--instagram-color);
+  box-shadow: 0 0 10px var(--instagram-color),
+              0 0 20px var(--instagram-color),
+              0 0 40px var(--instagram-color),
+              0 0 80px var(--instagram-color),
+              0 0 120px var(--instagram-color),
+              0 0 240px var(--instagram-color);
+}
+
+.icon span:hover::before {
+  transform: scale(1);
+}
+
+.icon span:hover::after {
+  transform: scale(1);
+}

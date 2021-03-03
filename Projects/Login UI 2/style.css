@@ -1,0 +1,326 @@
+:root {
+  --primary-color: #4DD637;
+  --primary-dark: #006400;
+  --whatsapp-color: #25d366;
+  --whatsapp-dark-color: #075e54;
+  --facebook-color: #3b5998;
+  --linkedin-color: #0e76a8;
+  --twitter-color: #00acee;
+  --stackoverflow: #F48024;
+  /* --instagram-color: linear-gradient(to right, #833ab4, #fd1d1d, #fcb045); */
+  --instagram-color: #fd1d1d;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* linear-gradient(to right, #52c234, #061700); */
+
+body {
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /*background: linear-gradient(25deg, #434343, #000000);*/
+  background: linear-gradient(-25deg, #00bf8f 0%, #001510 50%, #001510 50%, #00bf8f 100%);
+  font-family: 'Poppins',sans-serif;
+  color: #fff;
+}
+
+.container {
+  position: relative;
+  width: 900px;
+  height: 550px;
+  border: 2px solid var(--primary-dark);
+  border-top: 2px solid var(--primary-color);
+  border-left: 2px solid var(--primary-color);
+  border-radius: 50px;
+  overflow: hidden;
+  background: rgba(77,214,55,.1);
+  /* box-shadow: 0 0 5px #555, 1px 1px 0 var(--primary-color); */
+}
+
+
+.container .form {
+  width: 640px;
+  height: 100%;
+  padding: 40px;
+  /* border: 1px solid green; */
+  transition: 1.2s;
+}
+
+.container .form.signin {
+  position: absolute;
+  top: 0;
+  transition-delay: 0.5s;
+}
+
+.container .form.signup {
+  position: absolute;
+  top: -640px;
+  right: 0;
+  transition-delay: 0s;
+}
+
+.form h2 {
+  text-align: center;
+  font-size: 2rem;
+}
+
+.form label {
+  display: block;
+  margin: 30px auto;
+  text-align: center;
+}
+
+
+
+.form label input[type="email"] {
+  margin-top: 10px;
+}
+
+.form label span {
+  display: block;
+  margin: 20px 0;
+  font-size: 1.1rem;
+}
+
+.form label input {
+  border: none;
+  outline: none;
+  background: none;
+  color: #fff;
+  border: 1px solid var(--primary-color);
+  border-radius: 30px;
+  font-size: 1rem;
+  font-weight: 400;
+  padding: 7px 10px;
+  transform: scaleX(1.1);
+  transition: .5s;
+}
+
+.form label input::placeholder {
+  font-weight: normal;
+  color: var(--primary-color);
+}
+
+.form label input:focus {
+  /* transform: scaleX(1.2); */
+  /* background: var(--primary-dark); */
+}
+
+.form button {
+  display: block;
+  text-align: center;
+  margin: 0 auto;
+  margin-top: 50px;
+
+}
+
+.form p {
+  display: block;
+  text-align: center;
+}
+
+.form p.forgot {
+  cursor: pointer;
+  font-weight: bold;
+  margin: 30px 0;
+}
+
+.form p.forgot:hover {
+  color: var(--primary-color);
+}
+
+.form p.or {
+  font-weight: bold;
+  font-style: italic;
+  margin-top: 40px;
+}
+
+.form .social {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  margin-top: 40px;
+}
+
+.form .social a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  margin: 0 10px;
+  cursor: pointer;
+}
+
+.form .social a.facebook:hover  {
+  border: 1px solid var(--facebook-color);
+}
+
+.form .social a.facebook:hover .fa-facebook {
+  color: var(--facebook-color);
+  font-size: 1.3rem;
+
+}
+
+.form .social a.google-plus:hover  {
+  border: 1px solid var(--instagram-color);
+}
+
+.form .social a.google-plus:hover .fa-google-plus {
+  color: var(--instagram-color);
+  font-size: 1.3rem;
+
+}
+
+.form .social a.github:hover  {
+  border: 1px solid #555;
+}
+
+.form .social a.github:hover .fa-github {
+  color: #555;
+  font-size: 1.3rem;
+
+}
+
+.form .social a.stack-overflow:hover  {
+  border: 1px solid var(--stackoverflow);
+}
+
+.form .social a.stack-overflow:hover .fa-stack-overflow {
+  color: var(--stackoverflow);
+  font-size: 1.3rem;
+
+}
+
+.form .social .fa{
+  font-size: 1.5rem;
+  transition: .3s;
+}
+
+/* Form Text */
+
+.formText {
+  /* color: var(--primary-dark); */
+  color: var(--primary-color);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  left: 640px;
+  height: 100%;
+  width: 260px;
+  padding: 20px;
+  /* border: 1px solid blue; */
+  /* background: var(--primary-color); */
+  background: rgba(77,214,55,.05);
+
+  transition: 1.2s;
+}
+
+.formText.signin {
+  top: 0;
+  transition-delay: .5s;
+}
+
+.formText.signup {
+  left: 0;
+  top: 640px;
+  transition-delay: 0s;
+}
+
+.formText h2, .formText p {
+  text-align: center;
+  margin: 20px 0;
+  line-height: 1.5;
+}
+
+.formText .btn-2 {
+  width: 100px;
+  height: 30px;
+  border-radius: 30px;
+}
+
+.formText img {
+  position: absolute;
+  bottom: 130px;
+  left: 30px;
+  max-width: 200px;
+}
+
+/* Sign Up Mode */
+.container.signup-mode .form.signup,
+.container.signup-mode .formText.signup{
+  top: 0;
+}
+
+.container.signup-mode .form.signup {
+  transition-delay: .5s;
+}
+
+.container.signup-mode .form.signin {
+  transition-delay: 0s;
+  top: -640px;
+}
+
+.container.signup-mode .formText.signup {
+  transition-delay: 0.5s;
+}
+
+.container.signup-mode .formText.signin {
+  transition-delay: 0s;
+  top: 640px;
+}
+
+/* Utilities */
+.btn {
+  width: 250px;
+  font-size: 1.1rem;
+  border-radius: 30px;
+  cursor: pointer;
+  outline: none;
+  background: transparent;
+  padding: 5px 0;
+  border: none;
+  border-right: 3px solid var(--primary-dark);
+  border-bottom: 3px solid var(--primary-dark);
+  border-left: 3px solid var(--primary-color);
+  border-top: 3px solid var(--primary-color);
+  color: #fff;
+}
+
+.btn:hover {
+  box-shadow: 2px 2px 10px var(--primary-color);
+}
+
+.btn:active {
+  transform: translateY(1px);
+  box-shadow: 1px 1px 5px var(--primary-color);
+}
+
+.btn-2 {
+  outline: none;
+  border: none;
+  cursor: pointer;
+  background: transparent;
+  padding: 5px 0;
+  border: 1px solid var(--primary-color);
+  color: #fff;
+}
+
+.btn-2:hover{
+  /* box-shadow: 0 0 5px #111; */
+  box-shadow: 2px 2px 10px var(--primary-color);
+}
+.btn-2:active {
+  transform: translateY(1px);
+  box-shadow: 1px 1px 5px var(--primary-color);
+}

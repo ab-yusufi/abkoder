@@ -1,0 +1,141 @@
+/*Remove All Margins and Paddings*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+body {
+  min-height: 100vh;
+  font-family: 'Poppins', sans-serif;
+}
+
+/*----- NavBar CSS START -----*/
+nav {
+  height: 100px;
+  border-bottom: 1px solid #ff7700;
+  background: #ff7700;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  transition: .5s;
+  transition-delay: .5s;
+}
+
+nav span {
+  position: absolute;
+  width: 50%;
+  height: 100vh;
+  transition: 1s;
+  transition-delay: 0s;
+
+}
+
+/*Left*/
+nav span:nth-child(1) {
+  left: 0;
+  background: repeating-linear-gradient(25deg,  #000 0%,  #000 10%,  #FF7700 10%,  #FF7700 20%);
+  transform: translateY(100%);
+}
+
+/*Right*/
+nav span:nth-child(2) {
+  right: 0;
+  background: repeating-linear-gradient(-25deg,  #000 0%,  #000 10%,  #FF7700 10%,  #FF7700 20%);
+  transform: translateY(-100%);
+}
+
+/*Toggle Button*/
+nav a.toggle::before {
+  content: "\f0c9";
+  font-family: 'FontAwesome';
+  position: absolute;
+  top: 50%;
+  right: 50px;
+  transform: translate(-50%, -50%);
+  font-size: 40px;
+  color: #fff;
+  cursor: pointer;
+}
+
+
+/*Glassmorphism Background*/
+nav ul {
+  width: 500px;
+  padding: 20px 0;
+  text-align: center;
+  list-style: none;
+  z-index: 2;
+  opacity: 0;
+  transform: translateX(200%);
+  background: rgba(255,255,255,0.3);
+  border: 3px solid rgba(255,255,255,0.6);
+  border-right: 3px solid rgba(255,255,255,0.2);
+  border-bottom: 3px solid rgba(255,255,255,0.2);
+  border-radius: 10px;
+  transition: .7s;
+  transition-delay: 0s;
+  backdrop-filter: blur(1px);
+}
+
+ul li {
+  margin: 20px 0;
+}
+
+
+/*Nav Links*/
+ul li a{
+  font-size: 35px;
+  text-decoration: none;
+  color: #fff;
+  padding: 5px 10px;
+  transition: .2s;
+}
+
+ul li a:hover {
+  color: #000;
+  border: 2px solid #000;
+  background-color: #ff7700;
+}
+
+/*When NavBar is Active/Shown */
+
+nav.activated {
+  transition-delay: 0s;
+  height: 100vh;
+}
+
+nav.activated span {
+  transform: translateY(0);
+  transition-delay: .5s;
+}
+
+nav.activated a.toggle::before {
+  content: '\f00d';
+  color: #fff;
+  z-index: 3;
+}
+
+nav.activated ul {
+  opacity: 1;
+  transform: translateX(0);
+  transition-delay: .5s;
+}
+
+/*----- NavBar CSS END ------*/
+
+section {
+  margin-top: 100px;
+}
+
+/* Media Queries */
+@media(max-width: 700px){
+  nav ul {
+    width: 400px;
+  }
+}

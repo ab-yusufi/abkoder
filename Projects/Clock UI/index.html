@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>My Clock</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
+  <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+  <div class="clock" id="clock">
+    <div class="hour">
+      <div class="hr" id="hr"></div>
+    </div>
+    <div class="min">
+      <div class="mn" id="mn"></div>
+    </div>
+    <div class="sec">
+      <div class="sc" id="sc"></div>
+    </div>
+  </div>
+  <div class="digital" id="digital">
+    <div class="digHr">
+      <h1 id="dHr"></h1>
+    </div>
+    <div class="digMin">
+      <h1 id="dMn"></h1>
+    </div>
+    <div class="digSec">
+      <h1 id="dSc"></h1>
+    </div>
+    <div class="ampm">
+      <p id="ampm"></p>
+    </div>
+  </div>
+  <div class="boxes">
+    <div class="box" id="langDiv">
+      <select id="lang" onchange="changeLang()">
+        <option value="english">English</option>
+        <option value="roman">Roman</option>
+      </select>
+    </div>
+    <div class="box">
+      <select id="theme" onchange="changeTheme()">
+        <option value="dark">Dark</option>
+        <option value="light">Light</option>
+      </select>
+    </div>
+    <div class="box">
+      <select id="clockChange" onchange="changeClock()">
+        <option value="analog">Analog</option>
+        <option value="digital">Digital</option>
+      </select>
+    </div>
+    <div class="box" id="formatDiv">
+      <select id="format" onchange="changeFormat()">
+        <option value="12">12 Hours</option>
+        <option value="24">24 Hours</option>
+      </select>
+    </div>
+    <div class="box" id="shapeDiv">
+      <select id="shape" onchange="changeShape()">
+        <option value="circle">Circle</option>
+        <option value="square">Square</option>
+      </select>
+    </div>
+  </div>
+
+  <script src="./script/script.js" charset="utf-8"></script>
+</body>
+</html>

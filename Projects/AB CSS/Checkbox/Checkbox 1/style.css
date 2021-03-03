@@ -1,0 +1,81 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #262626;
+  font-family: 'Poppins', sans-serif;
+}
+
+label {
+  position: relative;
+  cursor: pointer;
+  overflow-x: hidden;
+  transition: .7s;
+  box-shadow: 0 0 10px #f00, 0 0 20px #f00,0 0 40px #f00, 0 0 80px #f00;
+}
+
+label input {
+  appearance: none;
+  display: none;
+}
+
+label span {
+  position: relative;
+  display: block;
+  width: 80px;
+  height: 40px;
+  background: #111;
+  transition: .6s;
+
+}
+
+label span::after {
+  content: "OFF";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: red;
+  z-index: 10;
+
+  font-size: 1.5rem;
+}
+
+label .indicator {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 5px;
+  height: 40px;
+  background: red;
+  transition: .7s;
+}
+
+label .indicator2 {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 5px;
+  height: 40px;
+  background: red;
+  transition: .7s;
+}
+
+label input:checked ~ .indicator,
+label input:checked ~ .indicator2 {
+  width: 41px;
+  background: #0f0;
+}
+
+label input:checked ~ span::after {
+  content: "ON";
+  color: darkgreen;
+}
