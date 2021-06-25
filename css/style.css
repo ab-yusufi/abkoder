@@ -5,16 +5,16 @@
 }
 
 body {
-  background: #242B2E;
+  /* background: #242B2E; */
+  background: linear-gradient(to right, #0f0c29, #302b63, #24243e);
   overflow-x: hidden;
+  font-family: sans-serif;
 }
 
-
-
-.container h1{
+.container h1 {
   text-align: center;
   font-size: 3rem;
-  color: #FEFEFE;
+  color: #fefefe;
   margin-top: 40px;
 }
 
@@ -30,7 +30,7 @@ body {
 }
 
 .container .projectList .card {
-  background: #5DA3FA;
+  background: #5da3fa;
   padding: 20px 30px;
   border-radius: 10px;
   margin: 10px 0;
@@ -38,7 +38,7 @@ body {
 
 .container .projectList .card .cardImg {
   padding: 5px;
-  border: 2px solid #03203C;
+  border: 2px solid #03203c;
   border-radius: 10px;
 }
 
@@ -55,6 +55,9 @@ body {
   display: block;
   font-size: 1.5rem;
   margin: 20px 0;
+  color: #000;
+  text-decoration: underline;
+  font-weight: bold;
 }
 
 .container .projectList .card .cardBody p {
@@ -64,4 +67,10 @@ body {
   padding: 7px;
   border-radius: 5px;
   margin: 5px;
+}
+
+@media (max-width: 768px) {
+  .container .projectList .card .cardImg img {
+    width: 200px;
+  }
 }

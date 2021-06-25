@@ -1,0 +1,64 @@
+/* Reset CSS */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Center The Loader */
+body {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #000;
+}
+
+
+td {
+  width: 25px;
+  height: 25px;
+  background: #00ff0a;
+  border-radius: 50%;
+  transform: scale(0.1);
+  box-shadow: 0 0 10px #00ff0a,
+              0 0 20px #00ff0a,
+              0 0 40px #00ff0a,
+              0 0 80px #00ff0a;
+}
+
+tr:nth-child(odd) td {
+  animation: animate 1.5s linear infinite, changeColor 2s linear infinite;
+  animation-delay: calc(0.1s * var(--i)), 0s;
+}
+
+tr:nth-child(even) td {
+  animation: animate 1s linear infinite,  changeColor 2s linear infinite;
+  animation-delay: calc(-0.1s * var(--i)), 0s;
+}
+
+
+
+/* Animation */
+
+@keyframes changeColor {
+  0% {
+    filter: hue-rotate(0deg);
+  }
+  100% {
+    filter: hue-rotate(360deg);
+  }
+}
+
+
+@keyframes animate {
+  0% {
+    transform: scale(0.1);
+  }
+  10% {
+    transform: scale(1);
+  }
+  50%, 100% {
+    transform: scale(0.1);
+  }
+}

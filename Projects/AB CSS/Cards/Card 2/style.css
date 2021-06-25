@@ -1,0 +1,111 @@
+/* Reset CSS */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: repeating-linear-gradient(
+  	25deg,
+  	#000 0%,
+  	#000 5%,
+  	#52057B 5%,
+  	#52057B 10%
+  	);
+}
+
+.container {
+  height: 100vh;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+/* Stacked Cards */
+.card {
+  position: absolute;
+  left: 200px;
+  top: 210px;
+  width: 200px;
+  height: 300px;
+  opacity: 0.5;
+  border-radius: 10px;
+  transform: translate(-50%, -50%) rotateZ(calc(5deg * var(--i)));
+  z-index: calc(-1 * var(--i));
+  transition: 0.5s, box-shadow 0.5s;
+  transition-delay: calc(0.3s * var(--i)), calc(0.2s * var(--i));
+}
+
+.card img {
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  border: 10px solid #fff;
+}
+
+/* Glowing Borders */
+.card span {
+  position: absolute;
+  width: 200px;
+  height: 300px;
+  left: 100px;
+  top: 50%;
+  border-radius: 10px;
+  animation: animate 5s linear infinite;
+  transform: translate(-50%, -50%) rotateZ(0deg);
+  transition: 0.5s, box-shadow 0.5s;
+  transition-delay: calc(0.3s * var(--i)), calc(0.2s * var(--i));
+}
+
+/* Reveal Card */
+.checkbox {
+  margin-bottom: 20px;
+  width: 75px;
+  height: 75px;
+  cursor: pointer;
+}
+
+.checkbox:checked ~ .card {
+  top: 50%;
+  left: calc(175px + calc(300px * calc(var(--i) - 1)));
+  opacity: 1;
+  transform: translate(-50%, -50%) rotateZ(0deg);
+  transition: 0.5s, box-shadow 0.5s;
+  transition-delay: calc(0.2s * var(--i)), calc(0.25s * var(--i));
+}
+
+.checkbox:checked ~ .card span {
+  transition: 0.5s, box-shadow 0.5s;
+  transition-delay: calc(0.1s * var(--i)), calc(0.25s * var(--i));
+  box-shadow: 0 0 0 7px rgba(255, 124, 255, 0.3),
+    0 0 0 14px rgba(255, 124, 255, 0.3), 0 0 0 21px rgba(255, 124, 255, 0.3),
+    0 0 0 28px rgba(255, 124, 255, 0.3), 0 0 0 35px rgba(255, 124, 255, 0.3);
+}
+
+/* Animation */
+@keyframes animate {
+  0% {
+    filter: hue-rotate(calc(10deg * var(--i)));
+  }
+
+  100% {
+    filter: hue-rotate(calc(360deg * var(--i)));
+  }
+}
+
+
+
+/* Media Queries */
+@media (max-width: 768px) {
+  .checkbox {
+    position: fixed;
+    bottom: 0;
+  }
+
+  .checkbox:checked ~ .card {
+    left: 50%;
+    top: calc(250px + calc(400px * calc(var(--i) - 1)));
+  }
+}

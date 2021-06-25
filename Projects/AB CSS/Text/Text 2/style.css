@@ -1,0 +1,92 @@
+/*Reset CSS*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/*Center The Text*/
+body {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #000;
+  font-family: sans-serif;
+}
+
+/*Center Text in Span*/
+span {
+  color: #fff;
+  font-size: 10rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  margin: 0 5px;
+  color: rgba(255, 255, 255, 0.8);
+  text-shadow: 2px 2px 20px #0f0;
+  animation: animate 1s linear infinite, colorChange 0.5s linear infinite;
+  animation-delay: calc(0.1s * var(--i));
+}
+
+
+span:hover {
+  cursor: pointer;
+}
+
+/*Animations*/
+@keyframes animate {
+  0% {
+    transform: scaleY(1);
+  }
+  60% {
+    transform: scaleY(0.6);
+  }
+  70% {
+    transform: scaleY(0.9);
+  }
+  80% {
+    transform: scaleY(0.7);
+  }
+  90% {
+    transform: scaleY(1);
+  }
+  100% {
+    transform: scaleY(0.9);
+  }
+}
+
+@keyframes colorChange {
+  0% {
+    filter: hue-rotate(0deg);
+  }
+  100% {
+    filter: hue-rotate(360deg);
+  }
+}
+
+/*Responsive*/
+@media(max-width: 600px) {
+	span {
+		font-size: 2rem;
+	}
+}
+
+@media(min-width: 600px) {
+	span {
+		font-size: 5rem;
+	}
+}
+
+@media(min-width: 768px) {
+	span {
+		font-size: 6.5rem;
+	}
+}
+
+@media(min-width: 992px) {
+	span {
+		font-size: 10rem;
+	}
+}

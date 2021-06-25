@@ -9,9 +9,13 @@ body {
   height: 100vh;
   width: 100%;
   overflow: hidden;
-  background:
-  url(https://images.pexels.com/photos/2113566/pexels-photo-2113566.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940)
-   ;
+}
+
+.container {
+	height: 100%;
+	width: 100%;
+	background: url(https://images.pexels.com/photos/3532551/pexels-photo-3532551.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940) no-repeat center fixed;
+  background-size: cover;
 }
 
 table {
@@ -24,25 +28,26 @@ table {
 
 td {
   border-radius: 50%;
-  widows: 6.25%;
+  width: 6.25%;
   height: 11.11%;
   /* width: 12.5%; */
   /* height: 22.22%; */
-  background: #120E43;
+  /*background: #120E43;*/
+  background: #5DA3FA;
   transform: scale(2);
   opacity: 1;
   /* border: 1px solid #fff; */
-  box-shadow: 0 0 10px #120E43,
-              0 0 20px #120E43,
-              0 0 40px #120E43,
-              0 0 80px #120E43,
-              0 0 120px #120E43;
+  box-shadow: 0 0 10px #5DA3FA,
+              0 0 20px #5DA3FA,
+              0 0 40px #5DA3FA,
+              0 0 80px #5DA3FA,
+              0 0 120px #5DA3FA;
   /* background: #000; */
   /* transition: .1s; */
   /* transition-delay: 1s; */
-  animation: animate1 .05s linear;
-  animation-delay: calc(0.05s * var(--i));
-  animation-fill-mode: forwards;
+  animation: animate1 .05s linear forwards, colorChange 5s linear infinite;
+  animation-delay: calc(0.05s * var(--i)), 0s;
+  /*animation-fill-mode: forwards;*/
 }
 
 /* td:hover {
@@ -61,6 +66,18 @@ td {
     /* opacity: 0; */
   }
 }
+
+ @keyframes  colorChange {
+  0%  {
+  	filter: hue-rotate(0deg);
+  }
+  100%  {
+  	filter: hue-rotate(360deg);
+  }
+}
+
+
+
 /*
 @keyframes animate {
   0% {
