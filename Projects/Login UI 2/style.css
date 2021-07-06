@@ -1,19 +1,20 @@
 :root {
-  --bg-gradient: #00bf8f;
   /* --bg-gradient: #b4161b; */
-  --primary-color: #4dd637;
   /* --primary-color: #e6425e; */
-  --primary-dark: #006400;
   /* --primary-dark: #b4161b; */
-  --bg-light: rgba(77, 214, 55, 0.1);
   /* --bg-light: rgba(230, 66, 94, 0.1); */
-  --bg-light-ft: rgba(77, 214, 55, 0.05);
   /* --bg-light-ft: rgba(230, 66, 94, 0.1); */
+  --bg-gradient: #00bf8f;
+  --primary-color: #4dd637;
+  --primary-dark: #006400;
+  --bg-light: rgba(77, 214, 55, 0.1);
+  --bg-light-ft: rgba(77, 214, 55, 0.05);
   --whatsapp-color: #25d366;
   --whatsapp-dark-color: #075e54;
   --facebook-color: #3b5998;
   --stackoverflow: #f48024;
   --instagram-color: #fd1d1d;
+  --github-color: #555;
 }
 
 /* Reset CSS */
@@ -50,14 +51,12 @@ body {
   border-radius: 50px;
   overflow: hidden;
   background: var(--bg-light);
-  /* box-shadow: 0 0 5px #555, 2px 2px 10px var(--primary-color); */
 }
 
 .container .form {
   width: 71.111%;
   height: 100%;
   padding: 40px;
-  /* border: 1px solid green; */
   transition: 1.2s;
 }
 
@@ -83,18 +82,11 @@ body {
   display: block;
   margin: 30px auto;
   text-align: center;
-  /* border: 2px solid blue; */
 }
 
 .form label input[type="email"] {
   margin-top: 10px;
 }
-
-/* .form label span {
-  display: block;
-  margin: 20px 0;
-  font-size: 1.1rem;
-} */
 
 .form label input {
   border: none;
@@ -106,18 +98,12 @@ body {
   border-radius: 30px;
   font-size: 1rem;
   font-weight: 400;
-  /* transform: scaleX(1.1); */
   transition: 0.5s;
 }
 
 .form label input::placeholder {
   font-weight: normal;
   color: var(--primary-color);
-}
-
-.form label input:focus {
-  /* transform: scaleX(1.2); */
-  /* background: var(--primary-dark); */
 }
 
 .form button {
@@ -166,44 +152,40 @@ body {
   cursor: pointer;
 }
 
-.form .social a.facebook:hover {
-  border: 1px solid var(--facebook-color);
+.form .social a.facebook {
+  border: 3px solid var(--facebook-color);
 }
 
-.form .social a.facebook:hover .fa-facebook {
-  color: var(--facebook-color);
-  font-size: 1.3rem;
+.form .social a.facebook:hover {
+  background: var(--facebook-color);
+}
+
+.form .social a.google-plus {
+  border: 3px solid var(--instagram-color);
 }
 
 .form .social a.google-plus:hover {
-  border: 1px solid var(--instagram-color);
+  background: var(--instagram-color);
 }
 
-.form .social a.google-plus:hover .fa-google-plus {
-  color: var(--instagram-color);
-  font-size: 1.3rem;
+.form .social a.github {
+  border: 3px solid var(--github-color);
 }
 
 .form .social a.github:hover {
-  border: 1px solid #555;
+  background: var(--github-color);
 }
 
-.form .social a.github:hover .fa-github {
-  color: #555;
-  font-size: 1.3rem;
+.form .social a.stack-overflow {
+  border: 3px solid var(--stackoverflow);
 }
 
 .form .social a.stack-overflow:hover {
-  border: 1px solid var(--stackoverflow);
-}
-
-.form .social a.stack-overflow:hover .fa-stack-overflow {
-  color: var(--stackoverflow);
-  font-size: 1.3rem;
+  background: var(--stackoverflow);
 }
 
 .form .social .fa {
-  font-size: 1.5rem;
+  font-size: 1.3rem;
   transition: 0.3s;
 }
 
@@ -216,15 +198,11 @@ body {
   height: 100%;
   width: 28.89%;
   padding: 20px;
-  /* color: var(--primary-dark); */
   color: var(--primary-color);
   background: var(--bg-light-ft);
   display: flex;
   flex-direction: column;
   align-items: center;
-  /* border: 1px solid blue; */
-  /* background: var(--primary-color); */
-
   transition: 1.2s;
 }
 
@@ -243,7 +221,10 @@ body {
 .formText p {
   text-align: center;
   margin: 20px 0;
+  padding: 10px;
   line-height: 1.5;
+  color: #fff;
+  border-radius: 25px;
 }
 
 .formText .btn-2 {
@@ -315,12 +296,12 @@ body {
   cursor: pointer;
   background: transparent;
   padding: 5px 0;
-  border: 1px solid var(--primary-color);
+  border: 2px solid var(--primary-color);
   color: #fff;
+  font-weight: 600;
 }
 
 .btn-2:hover {
-  /* box-shadow: 0 0 5px #111; */
   box-shadow: 2px 2px 10px var(--primary-color);
 }
 .btn-2:active {
@@ -339,12 +320,10 @@ body {
     width: 100%;
     height: 80%;
     padding: 20px;
-    /* border: 5px solid green; */
     overflow: hidden;
   }
 
   .formText {
-    /* border: 5px solid blue; */
     width: 100%;
     height: 20%;
     left: auto;
@@ -405,7 +384,7 @@ body {
   }
 
   .form .social a.github {
-    border: 2px solid #555;
+    border: 2px solid var(--github-color);
   }
 
   .form .social a.stack-overflow {
@@ -435,8 +414,8 @@ body {
   }
 
   .form .social a {
-    height: 30px;
-    width: 30px;
+    height: 40px;
+    width: 40px;
   }
 
   .form .social .fa {
