@@ -1,19 +1,20 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+/* Colors - Given in Description */
 :root {
-  /* --bg-gradient: #b4161b; */
   /* --primary-color: #e6425e; */
   /* --primary-dark: #b4161b; */
+  /* --bg-gradient: #D82E2F; */
   /* --bg-light: rgba(230, 66, 94, 0.1); */
-  /* --bg-light-ft: rgba(230, 66, 94, 0.1); */
-  --bg-gradient: #00bf8f;
+
   --primary-color: #4dd637;
   --primary-dark: #006400;
+  --bg-gradient: #1b4d3e;
   --bg-light: rgba(77, 214, 55, 0.1);
-  --bg-light-ft: rgba(77, 214, 55, 0.05);
   --whatsapp-color: #25d366;
   --whatsapp-dark-color: #075e54;
   --facebook-color: #3b5998;
   --stackoverflow: #f48024;
-  --instagram-color: #fd1d1d;
+  --google-color: #fd1d1d;
   --github-color: #555;
 }
 
@@ -53,10 +54,11 @@ body {
   background: var(--bg-light);
 }
 
+/* Styling Form */
 .container .form {
   width: 71.111%;
   height: 100%;
-  padding: 40px;
+  padding: 20px;
   transition: 1.2s;
 }
 
@@ -78,17 +80,17 @@ body {
   font-size: 2rem;
 }
 
-.form label {
+.form div {
   display: block;
   margin: 30px auto;
   text-align: center;
 }
 
-.form label input[type="email"] {
+.form div input[type="email"] {
   margin-top: 10px;
 }
 
-.form label input {
+.form div input {
   border: none;
   outline: none;
   padding: 7px 10px;
@@ -101,7 +103,7 @@ body {
   transition: 0.5s;
 }
 
-.form label input::placeholder {
+.form div input::placeholder {
   font-weight: normal;
   color: var(--primary-color);
 }
@@ -161,11 +163,11 @@ body {
 }
 
 .form .social a.google-plus {
-  border: 3px solid var(--instagram-color);
+  border: 3px solid var(--google-color);
 }
 
 .form .social a.google-plus:hover {
-  background: var(--instagram-color);
+  background: var(--google-color);
 }
 
 .form .social a.github {
@@ -199,7 +201,7 @@ body {
   width: 28.89%;
   padding: 20px;
   color: var(--primary-color);
-  background: var(--bg-light-ft);
+  background: var(--bg-light);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -225,12 +227,6 @@ body {
   line-height: 1.5;
   color: #fff;
   border-radius: 25px;
-}
-
-.formText .btn-2 {
-  width: 100px;
-  height: 30px;
-  border-radius: 30px;
 }
 
 .formText img {
@@ -265,7 +261,7 @@ body {
 }
 
 /* Utilities */
-.btn {
+.submit-btn {
   width: 250px;
   font-size: 1.1rem;
   border-radius: 30px;
@@ -281,16 +277,16 @@ body {
   color: #fff;
 }
 
-.btn:hover {
+.submit-btn:hover {
   box-shadow: 2px 2px 10px var(--primary-color);
 }
 
-.btn:active {
+.submit-btn:active {
   transform: translateY(1px);
   box-shadow: 1px 1px 5px var(--primary-color);
 }
 
-.btn-2 {
+.mode-btn {
   outline: none;
   border: none;
   cursor: pointer;
@@ -299,16 +295,20 @@ body {
   border: 2px solid var(--primary-color);
   color: #fff;
   font-weight: 600;
+  width: 100px;
+  height: 30px;
+  border-radius: 30px;
 }
 
-.btn-2:hover {
+.mode-btn:hover {
   box-shadow: 2px 2px 10px var(--primary-color);
 }
-.btn-2:active {
+.mode-btn:active {
   transform: translateY(1px);
   box-shadow: 1px 1px 5px var(--primary-color);
 }
 
+/* Responsive */
 @media (max-width: 920px) {
   .container {
     width: 540px;
@@ -319,7 +319,7 @@ body {
   .container .form {
     width: 100%;
     height: 80%;
-    padding: 20px;
+    padding: 10px;
     overflow: hidden;
   }
 
@@ -355,7 +355,7 @@ body {
     font-size: 1.7rem;
   }
 
-  .form label {
+  .form div {
     margin: 20px;
   }
 
@@ -368,11 +368,11 @@ body {
   }
 
   .form p.or {
-    margin-top: 35px;
+    margin-top: 30px;
   }
 
   .form .social {
-    margin-top: 25px;
+    margin-top: 15px;
   }
 
   .form .social a.facebook {
@@ -380,7 +380,7 @@ body {
   }
 
   .form .social a.google-plus {
-    border: 2px solid var(--instagram-color);
+    border: 2px solid var(--google-color);
   }
 
   .form .social a.github {
@@ -409,7 +409,7 @@ body {
     margin-top: 25px;
   }
 
-  .form label {
+  .form div {
     margin: 15px 0;
   }
 
