@@ -319,7 +319,7 @@ body {
   .container .form {
     width: 100%;
     height: 80%;
-    padding: 10px;
+    padding: 20px;
     overflow: hidden;
   }
 
@@ -395,7 +395,7 @@ body {
 @media (max-width: 560px) {
   .container {
     width: 300px;
-    height: 500px;
+    height: 550px;
   }
 
   .formText {
@@ -406,7 +406,7 @@ body {
   }
 
   .form button {
-    margin-top: 25px;
+    margin-top: 35px;
   }
 
   .form div {
